@@ -5,4 +5,4 @@ WORKDIR /bin
 RUN wget https://raw.githubusercontent.com/digint/btrbk/master/btrbk
 RUN chmod +x btrbk
 
-ENTRYPOINT [ "/bin/btrbk" ]
+CMD /bin/btrbk
