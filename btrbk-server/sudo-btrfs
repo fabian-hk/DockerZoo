@@ -1,0 +1,2 @@
+btrbk ALL = NOPASSWD: /bin/btrfs
+btrbk ALL = NOPASSWD: /bin/readlink
