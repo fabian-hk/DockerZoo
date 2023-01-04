@@ -1,4 +1,4 @@
-FROM debian:10.8-slim
+FROM debian:11.6-slim
 
 RUN apt update && apt install -y openssh-server btrfs-progs sudo
 
