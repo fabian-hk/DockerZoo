@@ -1,9 +1,11 @@
 #!/bin/bash
 
-TAG=28.0.0-fpm
+. .env
 
-sed -i "/FROM nextcloud/c\FROM nextcloud:$TAG" ./Dockerfile
+echo "Building custom Nextcloud container: fabianhk/nextcloud:$NEXTCLOUD_TAG"
 
-TAG=$TAG docker build -t fabianhk/nextcloud:${TAG} .
+sed -i "/FROM nextcloud/c\FROM nextcloud:$NEXTCLOUD_TAG" nextcloud/Dockerfile
 
-docker push fabianhk/nextcloud:${TAG}
+docker build -t fabianhk/nextcloud:${NEXTCLOUD_TAG} -f nextcloud/Dockerfile .
+
+docker push fabianhk/nextcloud:${NEXTCLOUD_TAG}
